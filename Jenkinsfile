@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/ranyaboubich/Hello-world-pipeline'
+                git branch: 'main', url: 'https://github.com/ranyaboubich/Terraform-pipeline'
             }
         }
 

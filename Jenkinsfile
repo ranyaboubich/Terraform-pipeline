@@ -2,13 +2,16 @@ pipeline {
     agent any
 
     environment {
-        KUBECONFIG_CREDENTIALS = credentials('kubeconfig-credentials-id')
+        ARM_CLIENT_ID = credentials('azure-client-id')
+        ARM_CLIENT_SECRET = credentials('azure-client-secret')
+        ARM_SUBSCRIPTION_ID = credentials('azure-subscription-id')
+        ARM_TENANT_ID = credentials('azure-tenant-id')
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/ranyaboubich/terraform-repo'
+                git branch: 'main', url: 'https://github.com/ranyaboubich/Hello-world-pipeline'
             }
         }
 
